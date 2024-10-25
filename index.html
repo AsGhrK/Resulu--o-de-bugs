@@ -23,7 +23,7 @@
             const numeros = input.split(',');
             let soma = 0;
             for (let i = 0; i < numeros.length; i++) {
-                soma += parseInt(numeros[i]); // Aqui ainda precisamos converter os números
+                soma += parseInt(numeros[i].trim()); // Corrigido: agora cada número é convertido para inteiro
             }
 
             const media = soma / numeros.length;
