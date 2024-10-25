@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Bugs</title>
+</head>
+<body>
+    <h1>Cálculo da Média</h1>
+    <input type="text" id="numeros" placeholder="Digite números separados por vírgula">
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia() {
+            const input = document.getElementById('numeros').value;  // Bug 1: Não valida se o input está vazio
+            const numeros = input.split(',');  // Bug 2: Os números devem ser convertidos para inteiros
+
+            let soma = 0;
+            for (let i = 0; i < numeros.length; i++) {  // Bug 3: Deveria usar 'parseInt' para converter as strings
+                soma += numeros[i];
+            }
+
+            const media = soma / numeros.length;
+            document.getElementById('resultado').innerText = "A média é: " + media;
+        }
+    </script>
+</body>
+</html>
