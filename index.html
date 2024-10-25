@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo com Bugs</title>
+    <title>Exemplo Corrigido</title>
 </head>
 <body>
     <h1>Cálculo da Média</h1>
@@ -23,7 +23,7 @@
             const numeros = input.split(',');
             let soma = 0;
             for (let i = 0; i < numeros.length; i++) {
-                soma += parseInt(numeros[i].trim()); // Corrigido: agora cada número é convertido para inteiro
+                soma += parseInt(numeros[i].trim()); // Converte cada número para inteiro
             }
 
             const media = soma / numeros.length;
