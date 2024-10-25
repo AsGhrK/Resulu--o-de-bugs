@@ -13,12 +13,17 @@
 
     <script>
         function calcularMedia() {
-            const input = document.getElementById('numeros').value;  // Bug 1: Não valida se o input está vazio
-            const numeros = input.split(',');  // Bug 2: Os números devem ser convertidos para inteiros
+            const input = document.getElementById('numeros').value.trim();
+            // Verifica se o input está vazio
+            if (input === '') {
+                document.getElementById('resultado').innerText = "Por favor, insira alguns números.";
+                return; // Encerra a função se o input estiver vazio
+            }
 
+            const numeros = input.split(',');
             let soma = 0;
-            for (let i = 0; i < numeros.length; i++) {  // Bug 3: Deveria usar 'parseInt' para converter as strings
-                soma += numeros[i];
+            for (let i = 0; i < numeros.length; i++) {
+                soma += parseInt(numeros[i]); // Aqui ainda precisamos converter os números
             }
 
             const media = soma / numeros.length;
